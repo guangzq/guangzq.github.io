@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://yoursite.com/2014/01/20/Mac%E4%B8%8A%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8EGitHub-Page%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2017-01-20T10:09:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>Mac上搭建基于GitHub Page的Hexo博客</title>
+        <pubTime>2014-01-20T08:24:11.000Z</pubTime>
+        
+        <tag>Mac</tag>
+         
+        <tag>Hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>http://yoursite.com/2014/01/01/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2017-01-20T08:50:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>这是我的第一篇博客</title>
+        <pubTime>2014-01-01T12:07:11.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+</urlset>
