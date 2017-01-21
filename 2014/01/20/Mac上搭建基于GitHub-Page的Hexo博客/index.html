@@ -117,7 +117,7 @@ git
 Node.js
 Hexo">
 <meta property="og:image" content="http://yoursite.com/images/git.png">
-<meta property="og:updated_time" content="2017-01-21T09:02:12.000Z">
+<meta property="og:updated_time" content="2017-01-21T09:21:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac上搭建基于GitHub Page的Hexo博客">
 <meta name="twitter:description" content="概述
@@ -435,6 +435,14 @@ Hexo">
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
 <p>执行如下命令，开启hexo服务器：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s</div></pre></td></tr></table></figure>
+<h3 id="优化细节"><a href="#优化细节" class="headerlink" title="优化细节"></a>优化细节</h3><h4 id="图片如何调整大小"><a href="#图片如何调整大小" class="headerlink" title="图片如何调整大小"></a>图片如何调整大小</h4><p>在markdown语法中，一个方法之一是可以通过使用<em>img标签</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img src=&quot;./xxx.png&quot; width = &quot;300&quot; height = &quot;200&quot; alt=&quot;图片名称&quot; align=center /&gt;</div></pre></td></tr></table></figure>
+<h4 id="Mac下如何自动打开MarkDown编辑器"><a href="#Mac下如何自动打开MarkDown编辑器" class="headerlink" title="Mac下如何自动打开MarkDown编辑器"></a>Mac下如何自动打开<em>MarkDown编辑器</em></h4><ul>
+<li>首先在Hexo目录下的scripts目录中创建一个JavaScript脚本文件。如果没有这个scripts目录，则新建一个。名字任取。</li>
+<li>在所创建的脚本<em>.js</em>中写入：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var exec = require(&apos;child_process&apos;).exec;</div><div class="line">// Hexo 2.x 用户复制这段</div><div class="line">hexo.on(&apos;new&apos;, function(path)&#123;</div><div class="line">    exec(&apos;open -a &quot;markdown编辑器绝对路径.app&quot; &apos; + path);</div><div class="line">&#125;);</div><div class="line">// Hexo 3 用户复制这段</div><div class="line">hexo.on(&apos;new&apos;, function(data)&#123;</div><div class="line">    exec(&apos;open -a &quot;markdown编辑器绝对路径.app&quot; &apos; + data.path);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>不用通过<code>hexo g</code>就可以立即生效，可以创建一个文件试一下</p>
 
       
     </div>
@@ -621,7 +629,7 @@ var duoshuoQuery = {short_name:"guangzq"};
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境准备"><span class="nav-number">2.</span> <span class="nav-text">环境准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">3.</span> <span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-js"><span class="nav-number">3.1.</span> <span class="nav-text">Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git"><span class="nav-number">3.2.</span> <span class="nav-text">git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo"><span class="nav-number">3.3.</span> <span class="nav-text">Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化"><span class="nav-number">3.3.1.</span> <span class="nav-text">初始化</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境准备"><span class="nav-number">2.</span> <span class="nav-text">环境准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">3.</span> <span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-js"><span class="nav-number">3.1.</span> <span class="nav-text">Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git"><span class="nav-number">3.2.</span> <span class="nav-text">git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo"><span class="nav-number">3.3.</span> <span class="nav-text">Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化"><span class="nav-number">3.3.1.</span> <span class="nav-text">初始化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化细节"><span class="nav-number">3.4.</span> <span class="nav-text">优化细节</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#图片如何调整大小"><span class="nav-number">3.4.1.</span> <span class="nav-text">图片如何调整大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mac下如何自动打开MarkDown编辑器"><span class="nav-number">3.4.2.</span> <span class="nav-text">Mac下如何自动打开MarkDown编辑器</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
