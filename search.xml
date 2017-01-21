@@ -3,16 +3,9 @@
   
     
     <entry>
-      <title><![CDATA[test]]></title>
-      <url>%2F2017%2F01%2F21%2Ftest%2F</url>
-      <content type="text"></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[The title of your blog]]></title>
-      <url>%2F2017%2F01%2F21%2FThe-title-of-your-blog%2F</url>
-      <content type="text"></content>
+      <title><![CDATA[记录开发中遇到的错误以及注意点]]></title>
+      <url>%2F2014%2F03%2F21%2F%E8%AE%B0%E5%BD%95%E5%BC%80%E5%8F%91%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%94%99%E8%AF%AF%E4%BB%A5%E5%8F%8A%E6%B3%A8%E6%84%8F%E7%82%B9%2F</url>
+      <content type="text"><![CDATA[前言建立这篇的博文是为了记录开发中常见的错误以及注意点，一遍后面再遇到相同的错误时可以不用再浪费时间]]></content>
     </entry>
 
     
