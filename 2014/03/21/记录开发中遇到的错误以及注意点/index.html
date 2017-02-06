@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="祝起光的博客">
 <meta property="og:description" content="前言建立这篇的博文是为了记录开发中常见的错误以及注意点，一遍后面再遇到相同的错误时可以不用再浪费时间">
 <meta property="og:image" content="http://yoursite.com/images/mac.png">
-<meta property="og:updated_time" content="2017-02-06T03:56:53.000Z">
+<meta property="og:updated_time" content="2017-02-06T06:16:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记录开发中遇到的错误以及注意点">
 <meta name="twitter:description" content="前言建立这篇的博文是为了记录开发中常见的错误以及注意点，一遍后面再遇到相同的错误时可以不用再浪费时间">
@@ -386,7 +386,7 @@
 <h3 id="WebView"><a href="#WebView" class="headerlink" title="WebView"></a>WebView</h3><p>在使用WebView时候，会出现网页加载空白，要添加下面三行代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">webView.setWebChromeClient(new WebChromeClient());</div><div class="line">webView.setWebViewClient(new WebViewClient());</div><div class="line">webView.getSettings().setJavaScriptEnabled(true);</div></pre></td></tr></table></figure>
 <p>其中，WebViewClient 主要提供网页加载各个阶段的通知，比如网页开始加载onPageStarted，网页结束加载onPageFinished等；WebChromeClient主要提供网页加载过程中提供的数据内容，比如返回网页的title,favicon等，setJavaScriptEnabled表示能够执行Javascript脚本</p>
-
+<h3 id="多人协作项目时，改代码要注意所有引用此处的地方，以免造成bug"><a href="#多人协作项目时，改代码要注意所有引用此处的地方，以免造成bug" class="headerlink" title="多人协作项目时，改代码要注意所有引用此处的地方，以免造成bug"></a>多人协作项目时，改代码要注意所有引用此处的地方，以免造成bug</h3>
       
     </div>
 
@@ -560,7 +560,7 @@ var duoshuoQuery = {short_name:"guangzq"};
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NavigationTabBar"><span class="nav-number">1.1.</span> <span class="nav-text">NavigationTabBar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebView"><span class="nav-number">1.2.</span> <span class="nav-text">WebView</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NavigationTabBar"><span class="nav-number">1.1.</span> <span class="nav-text">NavigationTabBar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebView"><span class="nav-number">1.2.</span> <span class="nav-text">WebView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多人协作项目时，改代码要注意所有引用此处的地方，以免造成bug"><span class="nav-number">1.3.</span> <span class="nav-text">多人协作项目时，改代码要注意所有引用此处的地方，以免造成bug</span></a></li></ol></li></ol></div>
             
 
           </div>
