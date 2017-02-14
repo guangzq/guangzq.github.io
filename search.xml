@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[如何手动安装gradle]]></title>
+      <url>%2F2017%2F02%2F14%2F%E5%A6%82%E4%BD%95%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85gradle%2F</url>
+      <content type="text"><![CDATA[在运行lottie-android时，项目导不进AS中，推测应该是电脑本地中没有所需的gradle版本，在线下载太慢，所以选择离线安装，安装步骤如下 下载gradlehttps://services.gradle.org/distributions下载所需版本 配置方法项目一导入就已经在下载gradle了，这时候中断导入，强制关闭AS，然后后在 ~\.gradle\wrapper\dists相应的gradle版本下生成两个文件，将后缀为.part的文件删除，将所下载的.zip放在该目录下注意不要解压 后记lottle-android是一个优秀的安卓动画解决方案，动画流畅而且效率较高，唯一的难点是UI设计师需要设计出优秀的动画从而形成json]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[记录开发中遇到的错误以及注意点]]></title>
       <url>%2F2014%2F03%2F21%2F%E8%AE%B0%E5%BD%95%E5%BC%80%E5%8F%91%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%94%99%E8%AF%AF%E4%BB%A5%E5%8F%8A%E6%B3%A8%E6%84%8F%E7%82%B9%2F</url>
       <content type="text"><![CDATA[前言建立这篇的博文是为了记录开发中常见的错误以及注意点，一遍后面再遇到相同的错误时可以不用再浪费时间 NavigationTabBar底部导航栏有个比较好用的第三方库NavigationTabBar,其中几个需要注意的细节 Badge的位置给了三种，分别是left(25%), center(50%) and right(75%),当应用right显示却是错位的，可以修改 1private final static float RIGHT_FRACTION = 0.75F; WebView在使用WebView时候，会出现网页加载空白，要添加下面三行代码 123webView.setWebChromeClient(new WebChromeClient());webView.setWebViewClient(new WebViewClient());webView.getSettings().setJavaScriptEnabled(true); 其中，WebViewClient 主要提供网页加载各个阶段的通知，比如网页开始加载onPageStarted，网页结束加载onPageFinished等；WebChromeClient主要提供网页加载过程中提供的数据内容，比如返回网页的title,favicon等，setJavaScriptEnabled表示能够执行Javascript脚本 多人协作项目时，改代码要注意所有引用此处的地方，以免造成bugxml中，View写成view编译会报错的环信IncompatibleClassChangeError的问题项目中环信sdk由v2.3.2升级到v2.3.3的时候报这个错 12Fatal Exception: java.lang.IncompatibleClassChangeErrorThe method &apos;int com.google.android.gms.common.d.a(android.content.Context)&apos; was expected to be of type static but instead was found to be of type virtual (declaration of &apos;java.lang.reflect.ArtMethod&apos; appears in /system/framework/core-libart.jar) 其实debug版本没有问题，是在release版本中报的错，所以估计是配置混淆的问题，经过一番google,确定要在混淆文件中添加 12-keep class com.google.android.gms.** &#123; *; &#125;-dontwarn com.google.android.gms.** 测试没有问题！]]></content>
