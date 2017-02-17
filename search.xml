@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[使用RxJava解决实际问题]]></title>
+      <url>%2F2017%2F02%2F17%2F%E4%BD%BF%E7%94%A8RxJava%E8%A7%A3%E5%86%B3%E5%AE%9E%E9%99%85%E9%97%AE%E9%A2%98%2F</url>
+      <content type="text"><![CDATA[RxJava学习有段时间了，项目中也有许多场景用到，比如防止多次点击，最近有个场景，日志的压缩上传，首先需要考虑压缩与上传不能同步执行，而且都需要在io线程中操作，并且要等待压缩后才能上传，获取不到压缩结束的状态，所以考虑压缩这一操作所在的线程结束，也就意味着压缩的结束，然后再执行上传操作，一开始是这样写的： 12345678910111213Thread thread = new Thread(new Runnable() &#123; @Override public void run() &#123; //TODO 压缩 &#125; &#125;); thread.start(); try &#123; thread.join(); &#125; catch (InterruptedException e) &#123; e.printStackTrace(); &#125; //TODO 上传操作 此处用join表示执行完子线程再向下执行，然而却造成了anr,应该是线程阻塞引起的 考虑到RxJava正是以异步著称的库，就是就改用RxJava来实现，用trampoline来实现这一需求再好不过了 Schedulers.trampoline( )当其它排队的任务完成后，在当前线程排队开始执行 用RxJava实现的代码 12345678910Scheduler scheduler = Schedulers.trampoline(); Scheduler.Worker worker = scheduler.createWorker(); worker.schedule(() -&gt; Schedulers.io().createWorker().schedule(() -&gt; &#123; L.line(&quot;start_zip&quot;); //TODO 压缩 worker.schedule(() -&gt; &#123; L.line(&quot;ziping&quot;); //TODO 上传操作 L.line(&quot;zip_end&quot;); &#125;)); 后记RxJava是个异步解决复杂流程的极好的库，是时候总结一波了]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[如何手动安装gradle]]></title>
       <url>%2F2017%2F02%2F14%2F%E5%A6%82%E4%BD%95%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85gradle%2F</url>
       <content type="text"><![CDATA[在运行lottie-android时，项目导不进AS中，推测应该是电脑本地中没有所需的gradle版本，在线下载太慢，所以选择离线安装，安装步骤如下 下载gradlehttps://services.gradle.org/distributions下载所需版本 配置方法项目一导入就已经在下载gradle了，这时候中断导入，强制关闭AS，然后后在 ~\.gradle\wrapper\dists相应的gradle版本下生成两个文件，将后缀为.part的文件删除，将所下载的.zip放在该目录下注意不要解压 后记lottle-android是一个优秀的安卓动画解决方案，动画流畅而且效率较高，唯一的难点是UI设计师需要设计出优秀的动画从而形成json]]></content>
